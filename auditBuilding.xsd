@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditBuilding" targetNamespace="http://audit.nrel.gov/auditBuilding" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditStory="http://audit.nrel.gov/auditStory" xmlns:auditZone="http://audit.nrel.gov/auditZone" xmlns:auditHotWaterSystem="http://audit.nrel.gov/auditHotWaterSystem" xmlns:auditServiceWaterHeatingSystem="http://audit.nrel.gov/auditServiceWaterHeatingSystem" xmlns:auditAirSystem="http://audit.nrel.gov/auditAirSystem" xmlns:auditChilledWaterSystem="http://audit.nrel.gov/auditChilledWaterSystem" xmlns:auditCondenserWaterSystem="http://audit.nrel.gov/auditCondenserWaterSystem" >
-<xs:annotation>
-<xs:documentation>auditBuilding.xsd describes the auditBuilding components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:import namespace="http://audit.nrel.gov/auditStory" schemaLocation="auditStory.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditZone" schemaLocation="auditZone.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditHotWaterSystem" schemaLocation="auditHotWaterSystem.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditServiceWaterHeatingSystem" schemaLocation="auditServiceWaterHeatingSystem.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditAirSystem" schemaLocation="auditAirSystem.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditChilledWaterSystem" schemaLocation="auditChilledWaterSystem.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditCondenserWaterSystem" schemaLocation="auditCondenserWaterSystem.xsd"/>
-<xs:element name="auditBuilding">
-<xs:annotation>
-<xs:documentation>root element which represents a auditBuilding component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element ref="auditStory:auditStory" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditZone:auditZone" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditHotWaterSystem:auditHotWaterSystem" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditServiceWaterHeatingSystem:auditServiceWaterHeatingSystem" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditAirSystem:auditAirSystem" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditChilledWaterSystem:auditChilledWaterSystem" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditCondenserWaterSystem:auditCondenserWaterSystem" maxOccurs="unbounded" minOccurs="0" />
-<xs:element name="defaultLightingScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultEquipmentScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultOccupancyScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultWaterFixtureScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultCoolingSetpointScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultHeatingSetpointScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultAtticFloorID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultAtticRoofID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultBelowGradeWallID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultExteriorRoofID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultExteriorWallID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultInteriorCeilingID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultInteriorFloorID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultInteriorWallID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultOutdoorExposedFloorID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultSlabOnGradeFloorID" type="xs:IDREF"   minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditBuilding" xmlns:auditAirSystem="http://audit.nrel.gov/auditAirSystem" xmlns:auditChilledWaterSystem="http://audit.nrel.gov/auditChilledWaterSystem" xmlns:auditCondenserWaterSystem="http://audit.nrel.gov/auditCondenserWaterSystem" xmlns:auditHotWaterSystem="http://audit.nrel.gov/auditHotWaterSystem" xmlns:auditServiceWaterHeatingSystem="http://audit.nrel.gov/auditServiceWaterHeatingSystem" xmlns:auditStory="http://audit.nrel.gov/auditStory" xmlns:auditZone="http://audit.nrel.gov/auditZone" xmlns:ns1="http://audit.nrel.gov/auditBuilding" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditBuilding.xsd describes the auditBuilding components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://audit.nrel.gov/auditStory" schemaLocation="auditStory.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditZone" schemaLocation="auditZone.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditHotWaterSystem" schemaLocation="auditHotWaterSystem.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditServiceWaterHeatingSystem" schemaLocation="auditServiceWaterHeatingSystem.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditAirSystem" schemaLocation="auditAirSystem.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditChilledWaterSystem" schemaLocation="auditChilledWaterSystem.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditCondenserWaterSystem" schemaLocation="auditCondenserWaterSystem.xsd"/>
+	<xs:element name="auditBuilding">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditBuilding component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditStory:auditStory"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditZone:auditZone"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditHotWaterSystem:auditHotWaterSystem"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditServiceWaterHeatingSystem:auditServiceWaterHeatingSystem"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditAirSystem:auditAirSystem"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditChilledWaterSystem:auditChilledWaterSystem"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditCondenserWaterSystem:auditCondenserWaterSystem"/>
+							<xs:element minOccurs="0" name="defaultLightingScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultEquipmentScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultOccupancyScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultWaterFixtureScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultCoolingSetpointScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultHeatingSetpointScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultAtticFloorID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultAtticRoofID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultBelowGradeWallID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultExteriorRoofID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultExteriorWallID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultInteriorCeilingID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultInteriorFloorID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultInteriorWallID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultOutdoorExposedFloorID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultSlabOnGradeFloorID" type="xs:IDREF"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditWindow" targetNamespace="http://audit.nrel.gov/auditWindow" elementFormDefault="qualified" attributeFormDefault="unqualified" >
-<xs:annotation>
-<xs:documentation>auditWindow.xsd describes the auditWindow components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:element name="auditWindow">
-<xs:annotation>
-<xs:documentation>root element which represents a auditWindow component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="windowDefinitionID" type="xs:IDREF"    />
-<xs:element name="numberOfWindows" type="xs:integer"    />
-<xs:element name="shadeType"  >
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="None"/>
-<xs:enumeration value="Blinds"/>
-<xs:enumeration value="Shades"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-<xs:element name="shadeControl"  >
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="None"/>
-<xs:enumeration value="Manual"/>
-<xs:enumeration value="Automatic"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-<xs:element name="overhangLength"   >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:string">
-<xs:attribute name="units" type="xs:string" default="inches"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditWindow" xmlns:ns1="http://audit.nrel.gov/auditWindow" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditWindow.xsd describes the auditWindow components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:element name="auditWindow">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditWindow component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="windowDefinitionID" type="xs:IDREF"/>
+							<xs:element name="numberOfWindows" type="xs:integer"/>
+							<xs:element name="shadeType">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="None"/>
+										<xs:enumeration value="Blinds"/>
+										<xs:enumeration value="Shades"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="shadeControl">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="None"/>
+										<xs:enumeration value="Manual"/>
+										<xs:enumeration value="Automatic"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="overhangLength">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute default="inches" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

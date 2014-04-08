@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditEvaporativeCooler" targetNamespace="http://audit.nrel.gov/auditEvaporativeCooler" elementFormDefault="qualified" attributeFormDefault="unqualified" >
-<xs:annotation>
-<xs:documentation>auditEvaporativeCooler.xsd describes the auditEvaporativeCooler components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:element name="auditEvaporativeCooler">
-<xs:annotation>
-<xs:documentation>root element which represents a auditEvaporativeCooler component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element name="wetbulbEffectiveness"   >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="%"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditEvaporativeCooler" xmlns:ns1="http://audit.nrel.gov/auditEvaporativeCooler" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditEvaporativeCooler.xsd describes the auditEvaporativeCooler components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:element name="auditEvaporativeCooler">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditEvaporativeCooler component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element name="wetbulbEffectiveness">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="%" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

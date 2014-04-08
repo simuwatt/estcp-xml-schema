@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditSchedulePeriod" targetNamespace="http://audit.nrel.gov/auditSchedulePeriod" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditScheduleValue="http://audit.nrel.gov/auditScheduleValue" >
-<xs:annotation>
-<xs:documentation>auditSchedulePeriod.xsd describes the auditSchedulePeriod components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:import namespace="http://audit.nrel.gov/auditScheduleValue" schemaLocation="auditScheduleValue.xsd"/>
-<xs:element name="auditSchedulePeriod">
-<xs:annotation>
-<xs:documentation>root element which represents a auditSchedulePeriod component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element name="scheduleType"  >
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="Lights"/>
-<xs:enumeration value="Occupancy"/>
-<xs:enumeration value="Equipment"/>
-<xs:enumeration value="Water Use"/>
-<xs:enumeration value="Elevators"/>
-<xs:enumeration value="Process Load"/>
-<xs:enumeration value="Thermostat Heating Setpoint"/>
-<xs:enumeration value="Thermostat Cooling Setpoint"/>
-<xs:enumeration value="HVAC Operation"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-<xs:element ref="auditScheduleValue:auditScheduleValue" maxOccurs="unbounded" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditSchedulePeriod" xmlns:auditScheduleValue="http://audit.nrel.gov/auditScheduleValue" xmlns:ns1="http://audit.nrel.gov/auditSchedulePeriod" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditSchedulePeriod.xsd describes the auditSchedulePeriod components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://audit.nrel.gov/auditScheduleValue" schemaLocation="auditScheduleValue.xsd"/>
+	<xs:element name="auditSchedulePeriod">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditSchedulePeriod component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element name="scheduleType">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Lights"/>
+										<xs:enumeration value="Occupancy"/>
+										<xs:enumeration value="Equipment"/>
+										<xs:enumeration value="Water Use"/>
+										<xs:enumeration value="Elevators"/>
+										<xs:enumeration value="Process Load"/>
+										<xs:enumeration value="Thermostat Heating Setpoint"/>
+										<xs:enumeration value="Thermostat Cooling Setpoint"/>
+										<xs:enumeration value="HVAC Operation"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditScheduleValue:auditScheduleValue"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

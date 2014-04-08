@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditZone" targetNamespace="http://audit.nrel.gov/auditZone" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditThermostat="http://audit.nrel.gov/auditThermostat" xmlns:auditAirTerminal="http://audit.nrel.gov/auditAirTerminal" >
-<xs:annotation>
-<xs:documentation>auditZone.xsd describes the auditZone components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:import namespace="http://audit.nrel.gov/auditThermostat" schemaLocation="auditThermostat.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditAirTerminal" schemaLocation="auditAirTerminal.xsd"/>
-<xs:element name="auditZone">
-<xs:annotation>
-<xs:documentation>root element which represents a auditZone component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element ref="auditThermostat:auditThermostat"  minOccurs="0" />
-<xs:element ref="auditAirTerminal:auditAirTerminal"  minOccurs="0" />
-<xs:element name="waterElectricOrGasTerminalID" type="xs:IDREF"  maxOccurs="unbounded" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditZone" xmlns:auditAirTerminal="http://audit.nrel.gov/auditAirTerminal" xmlns:auditThermostat="http://audit.nrel.gov/auditThermostat" xmlns:ns1="http://audit.nrel.gov/auditZone" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditZone.xsd describes the auditZone components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://audit.nrel.gov/auditThermostat" schemaLocation="auditThermostat.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditAirTerminal" schemaLocation="auditAirTerminal.xsd"/>
+	<xs:element name="auditZone">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditZone component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element minOccurs="0" ref="auditThermostat:auditThermostat"/>
+							<xs:element minOccurs="0" ref="auditAirTerminal:auditAirTerminal"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" name="waterElectricOrGasTerminalID" type="xs:IDREF"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

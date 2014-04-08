@@ -1,143 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditSpace" targetNamespace="http://audit.nrel.gov/auditSpace" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditLuminaire="http://audit.nrel.gov/auditLuminaire" xmlns:auditPlugLoad="http://audit.nrel.gov/auditPlugLoad" xmlns:auditOccupant="http://audit.nrel.gov/auditOccupant" xmlns:auditWaterFixture="http://audit.nrel.gov/auditWaterFixture" xmlns:auditProcessLoad="http://audit.nrel.gov/auditProcessLoad" xmlns:auditWindow="http://audit.nrel.gov/auditWindow" xmlns:auditShape="http://audit.nrel.gov/auditShape" >
-<xs:annotation>
-<xs:documentation>auditSpace.xsd describes the auditSpace components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:import namespace="http://audit.nrel.gov/auditLuminaire" schemaLocation="auditLuminaire.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditPlugLoad" schemaLocation="auditPlugLoad.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditOccupant" schemaLocation="auditOccupant.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditWaterFixture" schemaLocation="auditWaterFixture.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditProcessLoad" schemaLocation="auditProcessLoad.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditWindow" schemaLocation="auditWindow.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditShape" schemaLocation="auditShape.xsd"/>
-<xs:element name="auditSpace">
-<xs:annotation>
-<xs:documentation>root element which represents a auditSpace component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element name="workplaneHeight"  minOccurs="0" >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="inches"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="horizontalIlluminance"  minOccurs="0" >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="footcandles"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="verticalIlluminance"  minOccurs="0" >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="footcandles"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="measuredOccupiedAirFlowRate"  minOccurs="0" >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="cubic feet per minute"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="measuredUnoccupiedAirFlowRate"  minOccurs="0" >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="cubic feet per minute"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="designOccupiedAirFlowRate"  minOccurs="0" >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="cubic feet per minute"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="designUnoccupiedAirFlowRate"  minOccurs="0" >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="cubic feet per minute"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="useToCalculateSpaceTypeDefinition"  >
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="True"/>
-<xs:enumeration value="False"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-<xs:element name="spaceTypeID" type="xs:IDREF"    />
-<xs:element name="useToCalculateWindowGroupTypeDefinition"  minOccurs="0">
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="True"/>
-<xs:enumeration value="False"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-<xs:element name="windowGroupTypeID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="zoneID" type="xs:IDREF"   minOccurs="0" />
-<xs:element ref="auditLuminaire:auditLuminaire" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditPlugLoad:auditPlugLoad" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditOccupant:auditOccupant" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditWaterFixture:auditWaterFixture" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditProcessLoad:auditProcessLoad" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditWindow:auditWindow" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditShape:auditShape"   />
-<xs:element name="defaultLightingScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultEquipmentScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultOccupancyScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultWaterFixtureScheduleID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultAtticFloorID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultAtticRoofID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultBelowGradeWallID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultExteriorRoofID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultExteriorWallID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultInteriorCeilingID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultInteriorFloorID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultInteriorWallID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultOutdoorExposedFloorID" type="xs:IDREF"   minOccurs="0" />
-<xs:element name="defaultSlabOnGradeFloorID" type="xs:IDREF"   minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditSpace" xmlns:auditLuminaire="http://audit.nrel.gov/auditLuminaire" xmlns:auditOccupant="http://audit.nrel.gov/auditOccupant" xmlns:auditPlugLoad="http://audit.nrel.gov/auditPlugLoad" xmlns:auditProcessLoad="http://audit.nrel.gov/auditProcessLoad" xmlns:auditShape="http://audit.nrel.gov/auditShape" xmlns:auditWaterFixture="http://audit.nrel.gov/auditWaterFixture" xmlns:auditWindow="http://audit.nrel.gov/auditWindow" xmlns:ns1="http://audit.nrel.gov/auditSpace" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditSpace.xsd describes the auditSpace components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://audit.nrel.gov/auditLuminaire" schemaLocation="auditLuminaire.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditPlugLoad" schemaLocation="auditPlugLoad.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditOccupant" schemaLocation="auditOccupant.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditWaterFixture" schemaLocation="auditWaterFixture.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditProcessLoad" schemaLocation="auditProcessLoad.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditWindow" schemaLocation="auditWindow.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditShape" schemaLocation="auditShape.xsd"/>
+	<xs:element name="auditSpace">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditSpace component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element minOccurs="0" name="workplaneHeight">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="inches" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="horizontalIlluminance">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="footcandles" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="verticalIlluminance">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="footcandles" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="measuredOccupiedAirFlowRate">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="cubic feet per minute" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="measuredUnoccupiedAirFlowRate">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="cubic feet per minute" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="designOccupiedAirFlowRate">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="cubic feet per minute" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="designUnoccupiedAirFlowRate">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="cubic feet per minute" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="useToCalculateSpaceTypeDefinition">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="True"/>
+										<xs:enumeration value="False"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="spaceTypeID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="useToCalculateWindowGroupTypeDefinition">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="True"/>
+										<xs:enumeration value="False"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element minOccurs="0" name="windowGroupTypeID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="zoneID" type="xs:IDREF"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditLuminaire:auditLuminaire"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditPlugLoad:auditPlugLoad"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditOccupant:auditOccupant"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWaterFixture:auditWaterFixture"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditProcessLoad:auditProcessLoad"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWindow:auditWindow"/>
+							<xs:element ref="auditShape:auditShape"/>
+							<xs:element minOccurs="0" name="defaultLightingScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultEquipmentScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultOccupancyScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultWaterFixtureScheduleID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultAtticFloorID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultAtticRoofID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultBelowGradeWallID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultExteriorRoofID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultExteriorWallID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultInteriorCeilingID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultInteriorFloorID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultInteriorWallID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultOutdoorExposedFloorID" type="xs:IDREF"/>
+							<xs:element minOccurs="0" name="defaultSlabOnGradeFloorID" type="xs:IDREF"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

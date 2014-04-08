@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditServiceWaterHeatingSystem" targetNamespace="http://audit.nrel.gov/auditServiceWaterHeatingSystem" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditPump="http://audit.nrel.gov/auditPump" xmlns:auditServiceWaterHeatingEquipment="http://audit.nrel.gov/auditServiceWaterHeatingEquipment" xmlns:auditServiceWaterHeatingSystemControls="http://audit.nrel.gov/auditServiceWaterHeatingSystemControls" >
-<xs:annotation>
-<xs:documentation>auditServiceWaterHeatingSystem.xsd describes the auditServiceWaterHeatingSystem components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:import namespace="http://audit.nrel.gov/auditPump" schemaLocation="auditPump.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditServiceWaterHeatingEquipment" schemaLocation="auditServiceWaterHeatingEquipment.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditServiceWaterHeatingSystemControls" schemaLocation="auditServiceWaterHeatingSystemControls.xsd"/>
-<xs:element name="auditServiceWaterHeatingSystem">
-<xs:annotation>
-<xs:documentation>root element which represents a auditServiceWaterHeatingSystem component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element ref="auditPump:auditPump" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditServiceWaterHeatingEquipment:auditServiceWaterHeatingEquipment" maxOccurs="unbounded" minOccurs="0" />
-<xs:element name="pumpingConfiguration"  >
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="Recirculation Loop"/>
-<xs:enumeration value="No Recirculation Loop"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-<xs:element ref="auditServiceWaterHeatingSystemControls:auditServiceWaterHeatingSystemControls"   />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditServiceWaterHeatingSystem" xmlns:auditPump="http://audit.nrel.gov/auditPump" xmlns:auditServiceWaterHeatingEquipment="http://audit.nrel.gov/auditServiceWaterHeatingEquipment" xmlns:auditServiceWaterHeatingSystemControls="http://audit.nrel.gov/auditServiceWaterHeatingSystemControls" xmlns:ns1="http://audit.nrel.gov/auditServiceWaterHeatingSystem" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditServiceWaterHeatingSystem.xsd describes the auditServiceWaterHeatingSystem components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://audit.nrel.gov/auditPump" schemaLocation="auditPump.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditServiceWaterHeatingEquipment" schemaLocation="auditServiceWaterHeatingEquipment.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditServiceWaterHeatingSystemControls" schemaLocation="auditServiceWaterHeatingSystemControls.xsd"/>
+	<xs:element name="auditServiceWaterHeatingSystem">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditServiceWaterHeatingSystem component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditPump:auditPump"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditServiceWaterHeatingEquipment:auditServiceWaterHeatingEquipment"/>
+							<xs:element name="pumpingConfiguration">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Recirculation Loop"/>
+										<xs:enumeration value="No Recirculation Loop"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element ref="auditServiceWaterHeatingSystemControls:auditServiceWaterHeatingSystemControls"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

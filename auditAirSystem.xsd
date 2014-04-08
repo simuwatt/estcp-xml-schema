@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditAirSystem" targetNamespace="http://audit.nrel.gov/auditAirSystem" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditEvaporativeCooler="http://audit.nrel.gov/auditEvaporativeCooler" xmlns:auditCoil="http://audit.nrel.gov/auditCoil" xmlns:auditFan="http://audit.nrel.gov/auditFan" xmlns:auditOutdoorAirIntake="http://audit.nrel.gov/auditOutdoorAirIntake" xmlns:auditEnergyRecoverySystem="http://audit.nrel.gov/auditEnergyRecoverySystem" xmlns:auditAirSystemControls="http://audit.nrel.gov/auditAirSystemControls" >
-<xs:annotation>
-<xs:documentation>auditAirSystem.xsd describes the auditAirSystem components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:import namespace="http://audit.nrel.gov/auditEvaporativeCooler" schemaLocation="auditEvaporativeCooler.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditCoil" schemaLocation="auditCoil.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditFan" schemaLocation="auditFan.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditOutdoorAirIntake" schemaLocation="auditOutdoorAirIntake.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditEnergyRecoverySystem" schemaLocation="auditEnergyRecoverySystem.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditAirSystemControls" schemaLocation="auditAirSystemControls.xsd"/>
-<xs:element name="auditAirSystem">
-<xs:annotation>
-<xs:documentation>root element which represents a auditAirSystem component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element name="yearBuilt" type="xs:string"    />
-<xs:element ref="auditEvaporativeCooler:auditEvaporativeCooler"  minOccurs="0" />
-<xs:element ref="auditCoil:auditCoil" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditFan:auditFan"  minOccurs="0" />
-<xs:element ref="auditOutdoorAirIntake:auditOutdoorAirIntake"  minOccurs="0" />
-<xs:element ref="auditEnergyRecoverySystem:auditEnergyRecoverySystem"  minOccurs="0" />
-<xs:element ref="auditAirSystemControls:auditAirSystemControls"   />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditAirSystem" xmlns:auditAirSystemControls="http://audit.nrel.gov/auditAirSystemControls" xmlns:auditCoil="http://audit.nrel.gov/auditCoil" xmlns:auditEnergyRecoverySystem="http://audit.nrel.gov/auditEnergyRecoverySystem" xmlns:auditEvaporativeCooler="http://audit.nrel.gov/auditEvaporativeCooler" xmlns:auditFan="http://audit.nrel.gov/auditFan" xmlns:auditOutdoorAirIntake="http://audit.nrel.gov/auditOutdoorAirIntake" xmlns:ns1="http://audit.nrel.gov/auditAirSystem" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditAirSystem.xsd describes the auditAirSystem components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://audit.nrel.gov/auditEvaporativeCooler" schemaLocation="auditEvaporativeCooler.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditCoil" schemaLocation="auditCoil.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditFan" schemaLocation="auditFan.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditOutdoorAirIntake" schemaLocation="auditOutdoorAirIntake.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditEnergyRecoverySystem" schemaLocation="auditEnergyRecoverySystem.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditAirSystemControls" schemaLocation="auditAirSystemControls.xsd"/>
+	<xs:element name="auditAirSystem">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditAirSystem component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element name="yearBuilt" type="xs:string"/>
+							<xs:element minOccurs="0" ref="auditEvaporativeCooler:auditEvaporativeCooler"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditCoil:auditCoil"/>
+							<xs:element minOccurs="0" ref="auditFan:auditFan"/>
+							<xs:element minOccurs="0" ref="auditOutdoorAirIntake:auditOutdoorAirIntake"/>
+							<xs:element minOccurs="0" ref="auditEnergyRecoverySystem:auditEnergyRecoverySystem"/>
+							<xs:element ref="auditAirSystemControls:auditAirSystemControls"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

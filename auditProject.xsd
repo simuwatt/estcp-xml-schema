@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditProject" targetNamespace="http://audit.nrel.gov/auditProject" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditSurfaceConstruction="http://audit.nrel.gov/auditSurfaceConstruction" xmlns:auditLuminaireDefinition="http://audit.nrel.gov/auditLuminaireDefinition" xmlns:auditPlugLoadDefinition="http://audit.nrel.gov/auditPlugLoadDefinition" xmlns:auditOccupantDefinition="http://audit.nrel.gov/auditOccupantDefinition" xmlns:auditWaterFixtureDefinition="http://audit.nrel.gov/auditWaterFixtureDefinition" xmlns:auditProcessLoadDefinition="http://audit.nrel.gov/auditProcessLoadDefinition" xmlns:auditWindowDefinition="http://audit.nrel.gov/auditWindowDefinition" xmlns:auditSchedulePeriod="http://audit.nrel.gov/auditSchedulePeriod" xmlns:auditScheduleRuleset="http://audit.nrel.gov/auditScheduleRuleset" xmlns:auditSpaceType="http://audit.nrel.gov/auditSpaceType" xmlns:auditWindowGroupType="http://audit.nrel.gov/auditWindowGroupType" xmlns:auditBuilding="http://audit.nrel.gov/auditBuilding" xmlns:auditWaterElectricOrGasTerminal="http://audit.nrel.gov/auditWaterElectricOrGasTerminal" xmlns:auditUtilityBill="http://audit.nrel.gov/auditUtilityBill" xmlns:auditCalibrationProblem="http://audit.nrel.gov/auditCalibrationProblem" xmlns:auditOptimizationProblem="http://audit.nrel.gov/auditOptimizationProblem" >
-<xs:annotation>
-<xs:documentation>auditProject.xsd describes the auditProject components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:import namespace="http://audit.nrel.gov/auditSurfaceConstruction" schemaLocation="auditSurfaceConstruction.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditLuminaireDefinition" schemaLocation="auditLuminaireDefinition.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditPlugLoadDefinition" schemaLocation="auditPlugLoadDefinition.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditOccupantDefinition" schemaLocation="auditOccupantDefinition.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditWaterFixtureDefinition" schemaLocation="auditWaterFixtureDefinition.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditProcessLoadDefinition" schemaLocation="auditProcessLoadDefinition.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditWindowDefinition" schemaLocation="auditWindowDefinition.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditSchedulePeriod" schemaLocation="auditSchedulePeriod.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditScheduleRuleset" schemaLocation="auditScheduleRuleset.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditSpaceType" schemaLocation="auditSpaceType.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditWindowGroupType" schemaLocation="auditWindowGroupType.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditBuilding" schemaLocation="auditBuilding.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditWaterElectricOrGasTerminal" schemaLocation="auditWaterElectricOrGasTerminal.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditUtilityBill" schemaLocation="auditUtilityBill.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditCalibrationProblem" schemaLocation="auditCalibrationProblem.xsd"/>
-<xs:import namespace="http://audit.nrel.gov/auditOptimizationProblem" schemaLocation="auditOptimizationProblem.xsd"/>
-<xs:element name="auditProject">
-<xs:annotation>
-<xs:documentation>root element which represents a auditProject component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element name="latitude"   >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="degrees"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="longitude"   >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="degrees"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="elevation"   >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="feet"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element name="weatherFileBCLID" type="xs:string"    />
-<xs:element ref="auditSurfaceConstruction:auditSurfaceConstruction" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditLuminaireDefinition:auditLuminaireDefinition" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditPlugLoadDefinition:auditPlugLoadDefinition" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditOccupantDefinition:auditOccupantDefinition" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditWaterFixtureDefinition:auditWaterFixtureDefinition" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditProcessLoadDefinition:auditProcessLoadDefinition" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditWindowDefinition:auditWindowDefinition" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditSchedulePeriod:auditSchedulePeriod" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditScheduleRuleset:auditScheduleRuleset" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditSpaceType:auditSpaceType" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditWindowGroupType:auditWindowGroupType" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditBuilding:auditBuilding"   />
-<xs:element ref="auditWaterElectricOrGasTerminal:auditWaterElectricOrGasTerminal" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditUtilityBill:auditUtilityBill" maxOccurs="unbounded" minOccurs="0" />
-<xs:element ref="auditCalibrationProblem:auditCalibrationProblem"  minOccurs="0" />
-<xs:element ref="auditOptimizationProblem:auditOptimizationProblem"  minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditProject" xmlns:auditBuilding="http://audit.nrel.gov/auditBuilding" xmlns:auditCalibrationProblem="http://audit.nrel.gov/auditCalibrationProblem" xmlns:auditLuminaireDefinition="http://audit.nrel.gov/auditLuminaireDefinition" xmlns:auditOccupantDefinition="http://audit.nrel.gov/auditOccupantDefinition" xmlns:auditOptimizationProblem="http://audit.nrel.gov/auditOptimizationProblem" xmlns:auditPlugLoadDefinition="http://audit.nrel.gov/auditPlugLoadDefinition" xmlns:auditProcessLoadDefinition="http://audit.nrel.gov/auditProcessLoadDefinition" xmlns:auditSchedulePeriod="http://audit.nrel.gov/auditSchedulePeriod" xmlns:auditScheduleRuleset="http://audit.nrel.gov/auditScheduleRuleset" xmlns:auditSpaceType="http://audit.nrel.gov/auditSpaceType" xmlns:auditSurfaceConstruction="http://audit.nrel.gov/auditSurfaceConstruction" xmlns:auditUtilityBill="http://audit.nrel.gov/auditUtilityBill" xmlns:auditWaterElectricOrGasTerminal="http://audit.nrel.gov/auditWaterElectricOrGasTerminal" xmlns:auditWaterFixtureDefinition="http://audit.nrel.gov/auditWaterFixtureDefinition" xmlns:auditWindowDefinition="http://audit.nrel.gov/auditWindowDefinition" xmlns:auditWindowGroupType="http://audit.nrel.gov/auditWindowGroupType" xmlns:ns1="http://audit.nrel.gov/auditProject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>auditProject.xsd describes the auditProject components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://audit.nrel.gov/auditSurfaceConstruction" schemaLocation="auditSurfaceConstruction.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditLuminaireDefinition" schemaLocation="auditLuminaireDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditPlugLoadDefinition" schemaLocation="auditPlugLoadDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditOccupantDefinition" schemaLocation="auditOccupantDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditWaterFixtureDefinition" schemaLocation="auditWaterFixtureDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditProcessLoadDefinition" schemaLocation="auditProcessLoadDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditWindowDefinition" schemaLocation="auditWindowDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditSchedulePeriod" schemaLocation="auditSchedulePeriod.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditScheduleRuleset" schemaLocation="auditScheduleRuleset.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditSpaceType" schemaLocation="auditSpaceType.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditWindowGroupType" schemaLocation="auditWindowGroupType.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditBuilding" schemaLocation="auditBuilding.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditWaterElectricOrGasTerminal" schemaLocation="auditWaterElectricOrGasTerminal.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditUtilityBill" schemaLocation="auditUtilityBill.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditCalibrationProblem" schemaLocation="auditCalibrationProblem.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditOptimizationProblem" schemaLocation="auditOptimizationProblem.xsd"/>
+	<xs:element name="auditProject">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditProject component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element name="latitude">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="degrees" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="longitude">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="degrees" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="elevation">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute default="feet" name="units" type="xs:string"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="weatherFileBCLID" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditSurfaceConstruction:auditSurfaceConstruction"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditLuminaireDefinition:auditLuminaireDefinition"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditPlugLoadDefinition:auditPlugLoadDefinition"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditOccupantDefinition:auditOccupantDefinition"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWaterFixtureDefinition:auditWaterFixtureDefinition"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditProcessLoadDefinition:auditProcessLoadDefinition"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWindowDefinition:auditWindowDefinition"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditSchedulePeriod:auditSchedulePeriod"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditScheduleRuleset:auditScheduleRuleset"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditSpaceType:auditSpaceType"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWindowGroupType:auditWindowGroupType"/>
+							<xs:element ref="auditBuilding:auditBuilding"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWaterElectricOrGasTerminal:auditWaterElectricOrGasTerminal"/>
+							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditUtilityBill:auditUtilityBill"/>
+							<xs:element minOccurs="0" ref="auditCalibrationProblem:auditCalibrationProblem"/>
+							<xs:element minOccurs="0" ref="auditOptimizationProblem:auditOptimizationProblem"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
