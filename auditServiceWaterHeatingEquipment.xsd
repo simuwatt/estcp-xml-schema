@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditServiceWaterHeatingEquipment" targetNamespace="http://audit.nrel.gov/auditServiceWaterHeatingEquipment" elementFormDefault="qualified" attributeFormDefault="unqualified" >
-<xs:annotation>
-<xs:documentation>auditServiceWaterHeatingEquipment.xsd describes the auditServiceWaterHeatingEquipment components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:element name="auditServiceWaterHeatingEquipment">
-<xs:annotation>
-<xs:documentation>root element which represents a auditServiceWaterHeatingEquipment component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element name="serviceWaterHeatingEquipmentBCLID" type="xs:string"    />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Gregg Larson (private) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditServiceWaterHeatingEquipment" targetNamespace="http://audit.nrel.gov/auditServiceWaterHeatingEquipment" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>auditServiceWaterHeatingEquipment.xsd describes the auditServiceWaterHeatingEquipment components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:element name="auditServiceWaterHeatingEquipment">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditServiceWaterHeatingEquipment component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" minOccurs="0"/>
+							<xs:element name="serviceWaterHeatingEquipmentBCLID" type="xs:string"/>
+							<xs:element name="zoneID" type="xs:IDREF" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
