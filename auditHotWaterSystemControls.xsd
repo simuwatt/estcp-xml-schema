@@ -23,7 +23,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="hotWaterSetpoint">
+							<xs:element minOccurs="0" name="hotWaterSetpoint">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:decimal">
