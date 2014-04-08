@@ -30,7 +30,6 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element minOccurs="0" name="name" type="xs:string"/>
-							<xs:element name="yearBuilt" type="xs:string"/>
 							<xs:element minOccurs="0" ref="auditEvaporativeCooler:auditEvaporativeCooler"/>
 							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditCoil:auditCoil"/>
 							<xs:element minOccurs="0" ref="auditFan:auditFan"/>
