@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditScheduleRule" targetNamespace="http://audit.nrel.gov/auditScheduleRule" elementFormDefault="qualified" attributeFormDefault="unqualified" >
+<xs:annotation>
+<xs:documentation>auditScheduleRule.xsd describes the auditScheduleRule components for the audit tool.</xs:documentation>
+</xs:annotation>
+<xs:annotation>
+<xs:documentation>Version -  0.1</xs:documentation>
+</xs:annotation>
+<xs:element name="auditScheduleRule">
+<xs:annotation>
+<xs:documentation>root element which represents a auditScheduleRule component</xs:documentation>
+</xs:annotation>
+ <xs:complexType>
+ <xs:sequence>
+<xs:element name="id" type="xs:ID">
+<xs:annotation>
+ <xs:documentation>unique ID of the component</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="attributes">
+<xs:annotation>
+<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name" type="xs:string"   minOccurs="0" />
+<xs:element name="schedulePeriodID" type="xs:IDREF"    />
+<xs:element name="startDate" type="xs:string"    />
+<xs:element name="endDate" type="xs:string"    />
+<xs:element name="apply0" type="xs:integer"    />
+<xs:element name="apply1" type="xs:integer"    />
+<xs:element name="apply2" type="xs:integer"    />
+<xs:element name="apply3" type="xs:integer"    />
+<xs:element name="apply4" type="xs:integer"    />
+<xs:element name="apply5" type="xs:integer"    />
+<xs:element name="apply6" type="xs:integer"    />
+<xs:element name="apply7" type="xs:integer"    />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditLine" targetNamespace="http://audit.nrel.gov/auditLine" elementFormDefault="qualified" attributeFormDefault="unqualified" >
+<xs:annotation>
+<xs:documentation>auditLine.xsd describes the auditLine components for the audit tool.</xs:documentation>
+</xs:annotation>
+<xs:annotation>
+<xs:documentation>Version -  0.1</xs:documentation>
+</xs:annotation>
+<xs:element name="auditLine">
+<xs:annotation>
+<xs:documentation>root element which represents a auditLine component</xs:documentation>
+</xs:annotation>
+ <xs:complexType>
+ <xs:sequence>
+<xs:element name="id" type="xs:ID">
+<xs:annotation>
+ <xs:documentation>unique ID of the component</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="attributes">
+<xs:annotation>
+<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="startVertexID" type="xs:IDREF"    />
+<xs:element name="endVertexID" type="xs:IDREF"    />
+<xs:element name="physical"  >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="True"/>
+<xs:enumeration value="False"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="opaqueConstructionID" type="xs:IDREF"   minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

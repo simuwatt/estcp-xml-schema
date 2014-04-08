@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditUtilityBill" targetNamespace="http://audit.nrel.gov/auditUtilityBill" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditBillingPeriod="http://audit.nrel.gov/auditBillingPeriod" >
+<xs:annotation>
+<xs:documentation>auditUtilityBill.xsd describes the auditUtilityBill components for the audit tool.</xs:documentation>
+</xs:annotation>
+<xs:annotation>
+<xs:documentation>Version -  0.1</xs:documentation>
+</xs:annotation>
+<xs:import namespace="http://audit.nrel.gov/auditBillingPeriod" schemaLocation="auditBillingPeriod.xsd"/>
+<xs:element name="auditUtilityBill">
+<xs:annotation>
+<xs:documentation>root element which represents a auditUtilityBill component</xs:documentation>
+</xs:annotation>
+ <xs:complexType>
+ <xs:sequence>
+<xs:element name="id" type="xs:ID">
+<xs:annotation>
+ <xs:documentation>unique ID of the component</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="attributes">
+<xs:annotation>
+<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name" type="xs:string"    />
+<xs:element name="fuelType"  >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Electricity"/>
+<xs:enumeration value="Natural Gas"/>
+<xs:enumeration value="Gasoline"/>
+<xs:enumeration value="Diesel"/>
+<xs:enumeration value="Fuel Oil"/>
+<xs:enumeration value="Propane"/>
+<xs:enumeration value="Water"/>
+<xs:enumeration value="Steam"/>
+<xs:enumeration value="District Cooling"/>
+<xs:enumeration value="District Heating"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="meterInstallLocation"  minOccurs="0">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Facility"/>
+<xs:enumeration value="Building"/>
+<xs:enumeration value="HVAC"/>
+<xs:enumeration value="Zone"/>
+<xs:enumeration value="System"/>
+<xs:enumeration value="Plant"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="meterSpecificInstallLocation" type="xs:string"   minOccurs="0" />
+<xs:element name="meterEndUseCategory"  minOccurs="0">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Heating"/>
+<xs:enumeration value="Cooling"/>
+<xs:enumeration value="InteriorLights"/>
+<xs:enumeration value="ExteriorLights"/>
+<xs:enumeration value="InteriorEquipment"/>
+<xs:enumeration value="ExteriorEquipment"/>
+<xs:enumeration value="Fans"/>
+<xs:enumeration value="Pumps"/>
+<xs:enumeration value="HeatRejection"/>
+<xs:enumeration value="Humidifier"/>
+<xs:enumeration value="HeatRecovery"/>
+<xs:enumeration value="WaterSystems"/>
+<xs:enumeration value="Refrigeration"/>
+<xs:enumeration value="Generators"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="meterSpecificEndUse" type="xs:string"   minOccurs="0" />
+<xs:element name="consumptionUnit"  >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="kBtu"/>
+<xs:enumeration value="MBtu"/>
+<xs:enumeration value="kWh"/>
+<xs:enumeration value="MWh"/>
+<xs:enumeration value="therms"/>
+<xs:enumeration value="RTh"/>
+<xs:enumeration value="tons"/>
+<xs:enumeration value="lbs"/>
+<xs:enumeration value="kLbs"/>
+<xs:enumeration value="MLbs"/>
+<xs:enumeration value="gal"/>
+<xs:enumeration value="L"/>
+<xs:enumeration value="cf"/>
+<xs:enumeration value="m3"/>
+<xs:enumeration value="Ccf"/>
+<xs:enumeration value="Mcf"/>
+<xs:enumeration value="MMcf"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="peakDemandUnit"  minOccurs="0">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="kW"/>
+<xs:enumeration value="MW"/>
+<xs:enumeration value="W"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="peakDemandWindow"  minOccurs="0" >
+<xs:complexType>
+<xs:simpleContent>
+<xs:extension base="xs:decimal">
+<xs:attribute name="units" type="xs:string" default="minutes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:element>
+<xs:element ref="auditBillingPeriod:auditBillingPeriod" maxOccurs="unbounded" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

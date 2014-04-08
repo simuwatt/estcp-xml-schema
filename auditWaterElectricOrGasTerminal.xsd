@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditWaterElectricOrGasTerminal" targetNamespace="http://audit.nrel.gov/auditWaterElectricOrGasTerminal" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditCoil="http://audit.nrel.gov/auditCoil" xmlns:auditFan="http://audit.nrel.gov/auditFan" >
+<xs:annotation>
+<xs:documentation>auditWaterElectricOrGasTerminal.xsd describes the auditWaterElectricOrGasTerminal components for the audit tool.</xs:documentation>
+</xs:annotation>
+<xs:annotation>
+<xs:documentation>Version -  0.1</xs:documentation>
+</xs:annotation>
+<xs:import namespace="http://audit.nrel.gov/auditCoil" schemaLocation="auditCoil.xsd"/>
+<xs:import namespace="http://audit.nrel.gov/auditFan" schemaLocation="auditFan.xsd"/>
+<xs:element name="auditWaterElectricOrGasTerminal">
+<xs:annotation>
+<xs:documentation>root element which represents a auditWaterElectricOrGasTerminal component</xs:documentation>
+</xs:annotation>
+ <xs:complexType>
+ <xs:sequence>
+<xs:element name="id" type="xs:ID">
+<xs:annotation>
+ <xs:documentation>unique ID of the component</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="attributes">
+<xs:annotation>
+<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name" type="xs:string"   minOccurs="0" />
+<xs:element name="terminalType"  >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Baseboard"/>
+<xs:enumeration value="Radiator"/>
+<xs:enumeration value="Convector"/>
+<xs:enumeration value="Infrared Heater"/>
+<xs:enumeration value="Radiant Panel"/>
+<xs:enumeration value="Radiant Slab"/>
+<xs:enumeration value="Passive Chilled Beam"/>
+<xs:enumeration value="Fan Coil Unit"/>
+<xs:enumeration value="Unit Heater"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element ref="auditCoil:auditCoil" maxOccurs="unbounded" minOccurs="0" />
+<xs:element ref="auditFan:auditFan"  minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

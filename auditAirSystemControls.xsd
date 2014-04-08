@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditAirSystemControls" targetNamespace="http://audit.nrel.gov/auditAirSystemControls" elementFormDefault="qualified" attributeFormDefault="unqualified" >
+<xs:annotation>
+<xs:documentation>auditAirSystemControls.xsd describes the auditAirSystemControls components for the audit tool.</xs:documentation>
+</xs:annotation>
+<xs:annotation>
+<xs:documentation>Version -  0.1</xs:documentation>
+</xs:annotation>
+<xs:element name="auditAirSystemControls">
+<xs:annotation>
+<xs:documentation>root element which represents a auditAirSystemControls component</xs:documentation>
+</xs:annotation>
+ <xs:complexType>
+ <xs:sequence>
+<xs:element name="id" type="xs:ID">
+<xs:annotation>
+ <xs:documentation>unique ID of the component</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="attributes">
+<xs:annotation>
+<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="heatingSupplyAirTemperatureSetpoint"   >
+<xs:complexType>
+<xs:simpleContent>
+<xs:extension base="xs:decimal">
+<xs:attribute name="units" type="xs:string" default="degrees F"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:element>
+<xs:element name="coolingSupplyAirTemperatureSetpoint"   >
+<xs:complexType>
+<xs:simpleContent>
+<xs:extension base="xs:decimal">
+<xs:attribute name="units" type="xs:string" default="degrees F"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:element>
+<xs:element name="ductStaticPressureSetpoint"  minOccurs="0" >
+<xs:complexType>
+<xs:simpleContent>
+<xs:extension base="xs:decimal">
+<xs:attribute name="units" type="xs:string" default="inches of water"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:element>
+<xs:element name="supplyAirTemperatureReset"  minOccurs="0">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="True"/>
+<xs:enumeration value="False"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ductStaticPressureReset"  minOccurs="0">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="True"/>
+<xs:enumeration value="False"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="supplyAirTemperatureOrDuctStaticResetFirst"  minOccurs="0">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Supply Air Temperature Reset First"/>
+<xs:enumeration value="Duct Static Pressure Reset First"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

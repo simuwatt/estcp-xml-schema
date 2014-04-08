@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditChilledWaterSystem" targetNamespace="http://audit.nrel.gov/auditChilledWaterSystem" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditPump="http://audit.nrel.gov/auditPump" xmlns:auditSecondaryPump="http://audit.nrel.gov/auditSecondaryPump" xmlns:auditElectricallyDrivenMechanicalCompressionChiller="http://audit.nrel.gov/auditElectricallyDrivenMechanicalCompressionChiller" xmlns:auditChilledWaterSystemControls="http://audit.nrel.gov/auditChilledWaterSystemControls" xmlns:auditWatersideEconomizer="http://audit.nrel.gov/auditWatersideEconomizer" >
+<xs:annotation>
+<xs:documentation>auditChilledWaterSystem.xsd describes the auditChilledWaterSystem components for the audit tool.</xs:documentation>
+</xs:annotation>
+<xs:annotation>
+<xs:documentation>Version -  0.1</xs:documentation>
+</xs:annotation>
+<xs:import namespace="http://audit.nrel.gov/auditPump" schemaLocation="auditPump.xsd"/>
+<xs:import namespace="http://audit.nrel.gov/auditSecondaryPump" schemaLocation="auditSecondaryPump.xsd"/>
+<xs:import namespace="http://audit.nrel.gov/auditElectricallyDrivenMechanicalCompressionChiller" schemaLocation="auditElectricallyDrivenMechanicalCompressionChiller.xsd"/>
+<xs:import namespace="http://audit.nrel.gov/auditChilledWaterSystemControls" schemaLocation="auditChilledWaterSystemControls.xsd"/>
+<xs:import namespace="http://audit.nrel.gov/auditWatersideEconomizer" schemaLocation="auditWatersideEconomizer.xsd"/>
+<xs:element name="auditChilledWaterSystem">
+<xs:annotation>
+<xs:documentation>root element which represents a auditChilledWaterSystem component</xs:documentation>
+</xs:annotation>
+ <xs:complexType>
+ <xs:sequence>
+<xs:element name="id" type="xs:ID">
+<xs:annotation>
+ <xs:documentation>unique ID of the component</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="attributes">
+<xs:annotation>
+<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name" type="xs:string"   minOccurs="0" />
+<xs:element ref="auditPump:auditPump" maxOccurs="unbounded"  />
+<xs:element ref="auditSecondaryPump:auditSecondaryPump"  minOccurs="0" />
+<xs:element ref="auditElectricallyDrivenMechanicalCompressionChiller:auditElectricallyDrivenMechanicalCompressionChiller" maxOccurs="unbounded" minOccurs="0" />
+<xs:element name="pipingConfiguration"  >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Primary-Secondary"/>
+<xs:enumeration value="Primary-Only"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="pumpingConfiguration"  >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Headered Pumps"/>
+<xs:enumeration value="Pump for Each Component"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element ref="auditChilledWaterSystemControls:auditChilledWaterSystemControls"   />
+<xs:element ref="auditWatersideEconomizer:auditWatersideEconomizer"  minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

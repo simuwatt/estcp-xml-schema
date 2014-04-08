@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditCoolingTowerFluidCooler" targetNamespace="http://audit.nrel.gov/auditCoolingTowerFluidCooler" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditPump="http://audit.nrel.gov/auditPump" xmlns:auditFan="http://audit.nrel.gov/auditFan" >
+<xs:annotation>
+<xs:documentation>auditCoolingTowerFluidCooler.xsd describes the auditCoolingTowerFluidCooler components for the audit tool.</xs:documentation>
+</xs:annotation>
+<xs:annotation>
+<xs:documentation>Version -  0.1</xs:documentation>
+</xs:annotation>
+<xs:import namespace="http://audit.nrel.gov/auditPump" schemaLocation="auditPump.xsd"/>
+<xs:import namespace="http://audit.nrel.gov/auditFan" schemaLocation="auditFan.xsd"/>
+<xs:element name="auditCoolingTowerFluidCooler">
+<xs:annotation>
+<xs:documentation>root element which represents a auditCoolingTowerFluidCooler component</xs:documentation>
+</xs:annotation>
+ <xs:complexType>
+ <xs:sequence>
+<xs:element name="id" type="xs:ID">
+<xs:annotation>
+ <xs:documentation>unique ID of the component</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="attributes">
+<xs:annotation>
+<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name" type="xs:string"   minOccurs="0" />
+<xs:element ref="auditPump:auditPump"  minOccurs="0" />
+<xs:element ref="auditFan:auditFan" maxOccurs="unbounded" minOccurs="0" />
+<xs:element name="towerType"  >
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Open"/>
+<xs:enumeration value="Open with Heat Exchanger"/>
+<xs:enumeration value="Fluid Cooler"/>
+<xs:enumeration value="Dry Cooler"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
