@@ -25,7 +25,7 @@
 						<xs:sequence>
 							<xs:element minOccurs="0" name="name" type="xs:string"/>
 							<xs:element name="boilerBCLID" type="xs:string"/>
-							<xs:element minOccurs="0" name="supplyWaterTemperature">
+							<xs:element name="supplyWaterTemperature">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:decimal">
@@ -34,7 +34,7 @@
 									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element minOccurs="0" name="returnWaterTemperature">
+							<xs:element name="returnWaterTemperature">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:decimal">
