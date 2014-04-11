@@ -24,12 +24,11 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element minOccurs="0" name="name" type="xs:string"/>
-							<xs:element name="outdoorAirDamperType">
+							<xs:element name="outdoorAirDamperPosition">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
-										<xs:enumeration value="Open or Closed"/>
-										<xs:enumeration value="Open or Half Open or Closed"/>
-										<xs:enumeration value="Fully Variable"/>
+										<xs:enumeration value="Modulate Flow"/>
+										<xs:enumeration value="Minimum Flow With Bypass"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
