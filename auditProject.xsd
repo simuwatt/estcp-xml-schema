@@ -78,6 +78,9 @@
 							<xs:element ref="auditWaterFixtureDefinition:auditWaterFixtureDefinition" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element ref="auditProcessLoadDefinition:auditProcessLoadDefinition" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element ref="auditWindowDefinition:auditWindowDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditPumpDefinition:auditPumpDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditFanDefinition:auditFanDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditBoilerDefinition:auditBoilerDefinition" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element ref="auditSchedulePeriod:auditSchedulePeriod" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element ref="auditScheduleRuleset:auditScheduleRuleset" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element ref="auditSpaceType:auditSpaceType" minOccurs="0" maxOccurs="unbounded"/>
