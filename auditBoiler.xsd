@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditBoiler" xmlns:ns1="http://audit.nrel.gov/auditBoiler" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ns1="http://audit.nrel.gov/auditBoiler" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://audit.nrel.gov/auditBoiler" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:annotation>
 		<xs:documentation>auditBoiler.xsd describes the auditBoiler components for the audit tool.</xs:documentation>
 	</xs:annotation>
@@ -23,13 +23,12 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element minOccurs="0" name="name" type="xs:string"/>
-							<xs:element name="boilerBCLID" type="xs:string"/>
+							<xs:element name="boilerDefinitionID" type="xs:IDREF"/>
 							<xs:element name="supplyWaterTemperature">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:decimal">
-											<xs:attribute default="degrees F" name="units" type="xs:string"/>
+											<xs:attribute name="units" type="xs:string" default="degrees F"/>
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
@@ -38,7 +37,7 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:decimal">
-											<xs:attribute default="degrees F" name="units" type="xs:string"/>
+											<xs:attribute name="units" type="xs:string" default="degrees F"/>
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>

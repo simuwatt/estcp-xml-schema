@@ -1,62 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditSecondaryPump" targetNamespace="http://audit.nrel.gov/auditSecondaryPump" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:auditMotor="http://audit.nrel.gov/auditMotor" >
-<xs:annotation>
-<xs:documentation>auditSecondaryPump.xsd describes the auditSecondaryPump components for the audit tool.</xs:documentation>
-</xs:annotation>
-<xs:annotation>
-<xs:documentation>Version -  0.1</xs:documentation>
-</xs:annotation>
-<xs:import namespace="http://audit.nrel.gov/auditMotor" schemaLocation="auditMotor.xsd"/>
-<xs:element name="auditSecondaryPump">
-<xs:annotation>
-<xs:documentation>root element which represents a auditSecondaryPump component</xs:documentation>
-</xs:annotation>
- <xs:complexType>
- <xs:sequence>
-<xs:element name="id" type="xs:ID">
-<xs:annotation>
- <xs:documentation>unique ID of the component</xs:documentation>
-</xs:annotation>
-</xs:element>
-<xs:element name="attributes">
-<xs:annotation>
-<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
-</xs:annotation>
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"   minOccurs="0" />
-<xs:element name="pumpBCLID" type="xs:string"    />
-<xs:element name="differentialHeadPressure"  minOccurs="0" >
-<xs:complexType>
-<xs:simpleContent>
-<xs:extension base="xs:decimal">
-<xs:attribute name="units" type="xs:string" default="feet of water column"/>
-</xs:extension>
-</xs:simpleContent>
-</xs:complexType>
-</xs:element>
-<xs:element ref="auditMotor:auditMotor"   />
-<xs:element name="controlType"  >
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="Constant Speed"/>
-<xs:enumeration value="Variable Speed"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-<xs:element name="driveType"  >
-<xs:simpleType>
-<xs:restriction base="xs:string">
-<xs:enumeration value="Geared"/>
-<xs:enumeration value="Chain"/>
-<xs:enumeration value="Direct"/>
-</xs:restriction>
-</xs:simpleType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://audit.nrel.gov/auditSecondaryPump" targetNamespace="http://audit.nrel.gov/auditSecondaryPump" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>auditSecondaryPump.xsd describes the auditSecondaryPump components for the audit tool.</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Version -  0.1</xs:documentation>
+	</xs:annotation>
+	<xs:element name="auditSecondaryPump">
+		<xs:annotation>
+			<xs:documentation>root element which represents a auditSecondaryPump component</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:ID">
+					<xs:annotation>
+						<xs:documentation>unique ID of the component</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="attributes">
+					<xs:annotation>
+						<xs:documentation>attributes are name-value pair descriptors specific to this component</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" minOccurs="0"/>
+							<xs:element name="pumpBCLID" type="xs:string"/>
+							<xs:element name="motorBCLID" type="xs:string"/>
+							<xs:element name="differentialHeadPressure" minOccurs="0">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:decimal">
+											<xs:attribute name="units" type="xs:string" default="feet of water column"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="controlType">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Constant Speed"/>
+										<xs:enumeration value="Variable Speed"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="driveType">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Geared"/>
+										<xs:enumeration value="Chain"/>
+										<xs:enumeration value="Direct"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

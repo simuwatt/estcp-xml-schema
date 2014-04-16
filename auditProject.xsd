@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditProject" xmlns:auditBuilding="http://audit.nrel.gov/auditBuilding" xmlns:auditCalibrationProblem="http://audit.nrel.gov/auditCalibrationProblem" xmlns:auditLuminaireDefinition="http://audit.nrel.gov/auditLuminaireDefinition" xmlns:auditOccupantDefinition="http://audit.nrel.gov/auditOccupantDefinition" xmlns:auditOptimizationProblem="http://audit.nrel.gov/auditOptimizationProblem" xmlns:auditPlugLoadDefinition="http://audit.nrel.gov/auditPlugLoadDefinition" xmlns:auditProcessLoadDefinition="http://audit.nrel.gov/auditProcessLoadDefinition" xmlns:auditSchedulePeriod="http://audit.nrel.gov/auditSchedulePeriod" xmlns:auditScheduleRuleset="http://audit.nrel.gov/auditScheduleRuleset" xmlns:auditSpaceType="http://audit.nrel.gov/auditSpaceType" xmlns:auditSurfaceConstruction="http://audit.nrel.gov/auditSurfaceConstruction" xmlns:auditUtilityBill="http://audit.nrel.gov/auditUtilityBill" xmlns:auditWaterElectricOrGasTerminal="http://audit.nrel.gov/auditWaterElectricOrGasTerminal" xmlns:auditWaterFixtureDefinition="http://audit.nrel.gov/auditWaterFixtureDefinition" xmlns:auditWindowDefinition="http://audit.nrel.gov/auditWindowDefinition" xmlns:auditWindowGroupType="http://audit.nrel.gov/auditWindowGroupType" xmlns:ns1="http://audit.nrel.gov/auditProject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:auditBuilding="http://audit.nrel.gov/auditBuilding" xmlns:auditCalibrationProblem="http://audit.nrel.gov/auditCalibrationProblem" xmlns:auditLuminaireDefinition="http://audit.nrel.gov/auditLuminaireDefinition" xmlns:auditOccupantDefinition="http://audit.nrel.gov/auditOccupantDefinition" xmlns:auditOptimizationProblem="http://audit.nrel.gov/auditOptimizationProblem" xmlns:auditPlugLoadDefinition="http://audit.nrel.gov/auditPlugLoadDefinition" xmlns:auditProcessLoadDefinition="http://audit.nrel.gov/auditProcessLoadDefinition" xmlns:auditSchedulePeriod="http://audit.nrel.gov/auditSchedulePeriod" xmlns:auditScheduleRuleset="http://audit.nrel.gov/auditScheduleRuleset" xmlns:auditSpaceType="http://audit.nrel.gov/auditSpaceType" xmlns:auditSurfaceConstruction="http://audit.nrel.gov/auditSurfaceConstruction" xmlns:auditUtilityBill="http://audit.nrel.gov/auditUtilityBill" xmlns:auditWaterElectricOrGasTerminal="http://audit.nrel.gov/auditWaterElectricOrGasTerminal" xmlns:auditWaterFixtureDefinition="http://audit.nrel.gov/auditWaterFixtureDefinition" xmlns:auditWindowDefinition="http://audit.nrel.gov/auditWindowDefinition" xmlns:auditWindowGroupType="http://audit.nrel.gov/auditWindowGroupType" xmlns:ns1="http://audit.nrel.gov/auditProject" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://audit.nrel.gov/auditProject" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:annotation>
 		<xs:documentation>auditProject.xsd describes the auditProject components for the audit tool.</xs:documentation>
 	</xs:annotation>
@@ -13,6 +13,9 @@
 	<xs:import namespace="http://audit.nrel.gov/auditWaterFixtureDefinition" schemaLocation="auditWaterFixtureDefinition.xsd"/>
 	<xs:import namespace="http://audit.nrel.gov/auditProcessLoadDefinition" schemaLocation="auditProcessLoadDefinition.xsd"/>
 	<xs:import namespace="http://audit.nrel.gov/auditWindowDefinition" schemaLocation="auditWindowDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditPumpDefinition" schemaLocation="auditPumpDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditFanDefinition" schemaLocation="auditFanDefinition.xsd"/>
+	<xs:import namespace="http://audit.nrel.gov/auditBoilerDefinition" schemaLocation="auditBoilerDefinition.xsd"/>
 	<xs:import namespace="http://audit.nrel.gov/auditSchedulePeriod" schemaLocation="auditSchedulePeriod.xsd"/>
 	<xs:import namespace="http://audit.nrel.gov/auditScheduleRuleset" schemaLocation="auditScheduleRuleset.xsd"/>
 	<xs:import namespace="http://audit.nrel.gov/auditSpaceType" schemaLocation="auditSpaceType.xsd"/>
@@ -39,12 +42,12 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element minOccurs="0" name="name" type="xs:string"/>
+							<xs:element name="name" type="xs:string" minOccurs="0"/>
 							<xs:element name="latitude">
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:decimal">
-											<xs:attribute default="degrees" name="units" type="xs:string"/>
+											<xs:attribute name="units" type="xs:string" default="degrees"/>
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
@@ -53,7 +56,7 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:decimal">
-											<xs:attribute default="degrees" name="units" type="xs:string"/>
+											<xs:attribute name="units" type="xs:string" default="degrees"/>
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
@@ -62,28 +65,28 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:decimal">
-											<xs:attribute default="feet" name="units" type="xs:string"/>
+											<xs:attribute name="units" type="xs:string" default="feet"/>
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="weatherFileBCLID" type="xs:string"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditSurfaceConstruction:auditSurfaceConstruction"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditLuminaireDefinition:auditLuminaireDefinition"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditPlugLoadDefinition:auditPlugLoadDefinition"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditOccupantDefinition:auditOccupantDefinition"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWaterFixtureDefinition:auditWaterFixtureDefinition"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditProcessLoadDefinition:auditProcessLoadDefinition"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWindowDefinition:auditWindowDefinition"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditSchedulePeriod:auditSchedulePeriod"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditScheduleRuleset:auditScheduleRuleset"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditSpaceType:auditSpaceType"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWindowGroupType:auditWindowGroupType"/>
+							<xs:element ref="auditSurfaceConstruction:auditSurfaceConstruction" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditLuminaireDefinition:auditLuminaireDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditPlugLoadDefinition:auditPlugLoadDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditOccupantDefinition:auditOccupantDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditWaterFixtureDefinition:auditWaterFixtureDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditProcessLoadDefinition:auditProcessLoadDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditWindowDefinition:auditWindowDefinition" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditSchedulePeriod:auditSchedulePeriod" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditScheduleRuleset:auditScheduleRuleset" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditSpaceType:auditSpaceType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditWindowGroupType:auditWindowGroupType" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element ref="auditBuilding:auditBuilding"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditWaterElectricOrGasTerminal:auditWaterElectricOrGasTerminal"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="auditUtilityBill:auditUtilityBill"/>
-							<xs:element minOccurs="0" ref="auditCalibrationProblem:auditCalibrationProblem"/>
-							<xs:element minOccurs="0" ref="auditOptimizationProblem:auditOptimizationProblem"/>
+							<xs:element ref="auditWaterElectricOrGasTerminal:auditWaterElectricOrGasTerminal" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditUtilityBill:auditUtilityBill" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="auditCalibrationProblem:auditCalibrationProblem" minOccurs="0"/>
+							<xs:element ref="auditOptimizationProblem:auditOptimizationProblem" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
