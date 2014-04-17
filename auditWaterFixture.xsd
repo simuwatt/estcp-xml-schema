@@ -24,9 +24,9 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="waterFixtureDefinitionID" type="xs:IDREF"/>
-							<xs:element minOccurs="0" name="scheduleID" type="xs:IDREF"/>
-							<xs:element minOccurs="0" name="serviceWaterHeatingSystemID" type="xs:IDREF"/>
 							<xs:element name="numberOfWaterFixtures" type="xs:integer"/>
+							<xs:element name="serviceWaterHeatingSystemID" type="xs:IDREF" minOccurs="0"/>
+							<xs:element name="scheduleID" type="xs:IDREF" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

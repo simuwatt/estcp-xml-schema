@@ -24,8 +24,8 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="processLoadDefinitionID" type="xs:IDREF"/>
-							<xs:element minOccurs="0" name="numberOfProcessLoads" type="xs:integer"/>
-							<xs:element minOccurs="0" name="scheduleID" type="xs:IDREF"/>
+							<xs:element name="numberOfProcessLoads" type="xs:integer" minOccurs="0"/>
+							<xs:element name="scheduleID" type="xs:IDREF" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

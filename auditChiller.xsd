@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditElectricallyDrivenMechanicalCompressionChiller" xmlns:ns1="http://audit.nrel.gov/auditElectricallyDrivenMechanicalCompressionChiller" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://audit.nrel.gov/auditChiller" xmlns:ns1="http://audit.nrel.gov/auditChiller" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:annotation>
-		<xs:documentation>auditElectricallyDrivenMechanicalCompressionChiller.xsd describes the auditElectricallyDrivenMechanicalCompressionChiller components for the audit tool.</xs:documentation>
+		<xs:documentation>auditChiller.xsd describes the auditChiller components for the audit tool.</xs:documentation>
 	</xs:annotation>
 	<xs:annotation>
 		<xs:documentation>Version -  0.1</xs:documentation>
 	</xs:annotation>
-	<xs:element name="auditElectricallyDrivenMechanicalCompressionChiller">
+	<xs:element name="auditChiller">
 		<xs:annotation>
-			<xs:documentation>root element which represents a auditElectricallyDrivenMechanicalCompressionChiller component</xs:documentation>
+			<xs:documentation>root element which represents a auditChiller component</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
@@ -23,8 +23,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element minOccurs="0" name="name" type="xs:string"/>
-							<xs:element name="electricallyDrivenMechanicalCompressionChillerBCLID" type="xs:string"/>
+							<xs:element name="chillerDefinitionID" type="xs:IDREF"/>
 							<xs:element name="supplyWaterTemperature">
 								<xs:complexType>
 									<xs:simpleContent>

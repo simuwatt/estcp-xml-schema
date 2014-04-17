@@ -25,7 +25,6 @@
 						<xs:sequence>
 							<xs:element name="luminaireDefinitionID" type="xs:IDREF"/>
 							<xs:element name="numberOfLuminaires" type="xs:integer"/>
-							<xs:element name="scheduleID" type="xs:IDREF" minOccurs="0"/>
 							<xs:element name="lightingControlType" minOccurs="0" maxOccurs="unbounded">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">
@@ -42,6 +41,7 @@
 								</xs:simpleType>
 							</xs:element>
 							<xs:element name="positionID" type="xs:IDREF" minOccurs="0"/>
+							<xs:element name="scheduleID" type="xs:IDREF" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

@@ -24,8 +24,8 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="occupantDefinitionID" type="xs:IDREF"/>
-							<xs:element minOccurs="0" name="scheduleID" type="xs:IDREF"/>
 							<xs:element name="numberOfOccupants" type="xs:integer"/>
+							<xs:element name="scheduleID" type="xs:IDREF" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
