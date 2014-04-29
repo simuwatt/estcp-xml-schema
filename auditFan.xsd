@@ -33,14 +33,6 @@
 									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="controlType">
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="Constant Speed"/>
-										<xs:enumeration value="Variable Speed"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
 							<xs:element name="driveType">
 								<xs:simpleType>
 									<xs:restriction base="xs:string">

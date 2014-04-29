@@ -24,6 +24,7 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="pumpDefinitionID" type="xs:IDREF"/>
+							<xs:element name="isSecondary" type="xs:integer" minOccurs="0"/>
 							<xs:element name="differentialHeadPressure" minOccurs="0">
 								<xs:complexType>
 									<xs:simpleContent>
@@ -32,14 +33,6 @@
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
-							</xs:element>
-							<xs:element name="controlType">
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="Constant Speed"/>
-										<xs:enumeration value="Variable Speed"/>
-									</xs:restriction>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="driveType">
 								<xs:simpleType>
