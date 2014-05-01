@@ -24,6 +24,15 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="fanDefinitionID" type="xs:IDREF"/>
+							<xs:element name="returnOrSupplyFan">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Return"/>
+										<xs:enumeration value="Supply"/>
+										<xs:enumeration value="None"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
 							<xs:element name="totalStaticPressure" minOccurs="0">
 								<xs:complexType>
 									<xs:simpleContent>
