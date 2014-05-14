@@ -37,7 +37,7 @@
 									<xs:restriction base="xs:string">
 										<xs:enumeration value="None"/>
 										<xs:enumeration value="Outdoor Air Reset"/>
-										<xs:enumeration value="Load Based Reset"/>
+										<xs:enumeration value="Load Based Reset"/> <!-- option has been removed from the app. -->
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
